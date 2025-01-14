@@ -16,7 +16,6 @@
     "express": "^4.21.2",
     "firebase": "^11.1.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Eclisher/authentification-app-firebase.git"

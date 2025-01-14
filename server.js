@@ -1,26 +1,19 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { initializeApp } = require("firebase/app");
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } = require("firebase/auth");
-const firebaseConfig = {
 
-    apiKey: "AIzaSyDy9J_ZRes3Grh845CtLqFcyRk9ggmjso4",
-  
-    authDomain: "auth-app-c91b4.firebaseapp.com",
-  
-    projectId: "auth-app-c91b4",
-  
-    storageBucket: "auth-app-c91b4.firebasestorage.app",
-  
-    messagingSenderId: "59607462211",
-  
-    appId: "1:59607462211:web:32c867e1d0c9dc40a7bff6",
-  
-    measurementId: "G-TXLXCVC3JN"
-  
-  };
-  
+const firebaseConfig = {
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID
+};
 
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
